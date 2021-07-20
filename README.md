@@ -3,8 +3,13 @@ This is the code for paper: Static and Dynamic Features Analysis from Human Skel
 
 
 # Train
-
+'''sh
+CUDA_VISIBLE_DEVICES=2 python train.py --config configs/train.yaml --phase train
+'''
 # Test
+'''sh
+CUDA_VISIBLE_DEVICES=0 python test.py --config configs/test.yaml --ae_checkpoint out/checkpoints/autoencoder_00050000.pt --fc_checkpoint out/checkpoints/fc_00050000.pt
+'''
 
 # Visualization
 
