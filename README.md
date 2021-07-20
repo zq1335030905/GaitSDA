@@ -42,7 +42,7 @@ The test result will be saved in an excel file.
   ```
 "heatmap" and "exchange" can be set to 0 if you don't want to generate the results.
 
-#### heatmap
+### heatmap
 motion difference.
 
 <img width="500" height="490" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/motion.jpg"/>
