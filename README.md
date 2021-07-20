@@ -47,4 +47,4 @@ motion difference
 ![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/motion.jpg)
 
 body and view features.
-[Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg)
+![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg)
