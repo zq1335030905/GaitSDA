@@ -1,4 +1,4 @@
-## Gait-recognition-with-disentanglement-features(Pytorch)
+## Gait recognition Static and Dynamic Features Analysis(Pytorch)
 This is the code for paper: Static and Dynamic Features Analysis from Human Skeletons for Gait Recognition in IJCB2021. If you have any qustions, you can contact with me by lzq.szu@gmail.com.
 
 ## About The Project
