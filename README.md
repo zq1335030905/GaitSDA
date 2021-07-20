@@ -53,4 +53,4 @@ body and view features.
 
 view exchange.
 
-<img width="900" height="450" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/view-disentanglement.jpg"/>
+<img width="600" height="300" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/view-disentanglement.jpg"/>
