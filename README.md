@@ -3,14 +3,20 @@ This is the code for paper: Static and Dynamic Features Analysis from Human Skel
 
 
 # Train
-'''sh
-CUDA_VISIBLE_DEVICES=2 python train.py --config configs/train.yaml --phase train
-'''
+* bash
+  ```sh
+  CUDA_VISIBLE_DEVICES=2 python train.py --config configs/train.yaml --phase train
+  ```
+
 # Test
-'''sh
-CUDA_VISIBLE_DEVICES=0 python test.py --config configs/test.yaml --ae_checkpoint out/checkpoints/autoencoder_00050000.pt --fc_checkpoint out/checkpoints/fc_00050000.pt
-'''
+* bash 
+  ```sh
+  python test.py --config configs/test.yaml --ae_checkpoint out/checkpoints/autoencoder_00050000.pt --fc_checkpoint out/checkpoints/fc_00050000.pt
+  ```
 
 # Visualization
-
-
+* bash 
+  ```sh
+  python visualize.py --config configs/test.yaml --checkpoint out/checkpoints/autoencoder_00050000.pt --heatmap 1 --exchange 1
+  ```
+"heatmap" and "exchange" can be set to 0 if you don't want to generate the results.
