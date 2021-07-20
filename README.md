@@ -2,7 +2,7 @@
 This is the code for paper: Static and Dynamic Features Analysis from Human Skeletons for Gait Recognition in IJCB2021. If you have any qustions, you can contact with me by lzq.szu@gmail.com.
 
 ## About The Project
-<img width="960" height="300" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/model_architecture_fixed.jpg"/>
+<img width="960" height="280" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/model_architecture_fixed.jpg"/>
 Gait recognition is an effective way to identify a person due to its non-contact and long-distance acquisition. In addition, the length of human limbs and the motion pattern
 of human from human skeletons have been proved to be effective features for gait recognition. However, the length of human limbs and motion pattern are calculated through
 human prior knowledge, more important or detailed information may be missing. Our method proposes to obtain the dynamic information and static information from human skeletons through disentanglement learning. In the experiments, it has been shown that the features extracted by our method are effective.
@@ -44,7 +44,10 @@ The test result will be saved in an excel file.
 
 #### heatmap
 motion difference
-![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/motion.jpg)
+<img width="500" height="490" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/motion.jpg"/>
 
 body and view features.
-![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg)
+<img width="900" height="200" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg"/>
+
+view exchange 
+<img width="900" height="450" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/view-disentanglement.jpg"/>
