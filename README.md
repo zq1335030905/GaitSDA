@@ -2,12 +2,10 @@
 This is the code for paper: Static and Dynamic Features Analysis from Human Skeletons for Gait Recognition in IJCB2021. If you have any qustions, you can contact with me by lzq.szu@gmail.com.
 
 ## About The Project
+![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/model_architecture_fixed.jpg)
 Gait recognition is an effective way to identify a person due to its non-contact and long-distance acquisition. In addition, the length of human limbs and the motion pattern
 of human from human skeletons have been proved to be effective features for gait recognition. However, the length of human limbs and motion pattern are calculated through
 human prior knowledge, more important or detailed information may be missing. Our method proposes to obtain the dynamic information and static information from human skeletons through disentanglement learning. In the experiments, it has been shown that the features extracted by our method are effective.
-
-![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/model_architecture_fixed.jpg)
-![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/disentanglement-module.jpg)
 
 ## Prepare for data
 You should download the data [CASIA-B](http://www.cbsr.ia.ac.cn/english/Gait%20Databases.asp), and extracted by alphapose or openpose, our network input x ([Batch, 30, 64]). 30 = 15*2, 15 is the num of keypoints and 2 is the x and y coordinate of each keypoint.
@@ -46,7 +44,7 @@ The test result will be saved in an excel file.
 
 #### heatmap
 motion difference
-[motion](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/motion.jpg)
+![Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/motion.jpg)
 
 body and view features.
-[body_and_view](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg)
+[Image_text](https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg)
