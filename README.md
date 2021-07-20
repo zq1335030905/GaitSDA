@@ -43,11 +43,14 @@ The test result will be saved in an excel file.
 "heatmap" and "exchange" can be set to 0 if you don't want to generate the results.
 
 #### heatmap
-motion difference
+motion difference.
+
 <img width="500" height="490" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/motion.jpg"/>
 
 body and view features.
-<img width="900" height="200" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg"/>
 
-view exchange 
+<img width="600" height="150" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/bodyandview.jpg"/>
+
+view exchange.
+
 <img width="900" height="450" src="https://github.com/zq1335030905/Gait-recognition-with-disentanglement-features/blob/main/imgs/view-disentanglement.jpg"/>
