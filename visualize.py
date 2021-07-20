@@ -6,11 +6,9 @@ import torch
 import argparse
 import numpy as np
 from lib.network import get_autoencoder, fc
-from lib.util.motion import preprocess_mixamo, preprocess_test, postprocess
-from lib.util.general import get_config
+from lib.util.general import get_config, testJoints2Video
 from lib.data import get_dataloader
 from lib.trainer import rotate_and_maybe_project_learning
-from preprocess import testJoints2Video
 from itertools import combinations
 import matplotlib.pyplot as plt
 
