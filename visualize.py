@@ -20,8 +20,11 @@ def get_parse():
                         help='which config to use.')
     parser.add_argument('--checkpoint', type=str, required=True,
                         help="path to trained model weights")
-    parser.add_argument('--save_folder', type=str, required=True, default="",
-                        help="path to trained model weights")
+    parser.add_argument('--heatmap', type=bool, required=True, default=1,
+                        help="whether draw heatmap result")
+    parser.add_argument('--exchange', type=bool, required=True, default=1,
+                        help="whether draw view exchange result")
+        
     args = parser.parse_args()
     return args
 
@@ -176,8 +179,8 @@ def draw_exchange_result(args):
 
 if __name__ == '__main__':
     args = get_parse()
-    if args.save_folder == "":
+    if args.heatmap:
         draw_heatmap_result(args)
-    else:
+    if args.exchange:
         draw_exchange_result(args)
         
