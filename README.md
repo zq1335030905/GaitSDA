@@ -26,11 +26,11 @@ tensorboard
 ### Tensorboard
   You can visualize the training process in tensorboard, and you should change the PortId, for example, 8008. 
   ```sh
-  tensorboard --logdir out/train/ --port PortId
+  tensorboard --logdir out/logs/ --port PortId
   ```
 
 ### Test
-The pretrained model parameters can be download in [BaiduYunPan](https://pan.baidu.com/s/1CabNogyq_DoO8W2CWxfMSQ), the extract code is 8652.
+The pretrained model parameters can be download in [BaiduYunPan](https://pan.baidu.com/s/1CabNogyq_DoO8W2CWxfMSQ), the extract code is 8652. You should download the parameters of fc and autoencoder to directory "out/checkpoints/".
   ```sh
   python test.py --config configs/test.yaml --ae_checkpoint out/checkpoints/autoencoder_00050000.pt --fc_checkpoint out/checkpoints/fc_00050000.pt
   ```
