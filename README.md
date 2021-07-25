@@ -30,7 +30,7 @@ tensorboard
   ```
 
 ### Test
-The pretrained model parameters can be download in [BaiduYunPan](www.baidu.com)
+The pretrained model parameters can be download in [BaiduYunPan](https://pan.baidu.com/s/1CabNogyq_DoO8W2CWxfMSQ), the extract code is 8652.
   ```sh
   python test.py --config configs/test.yaml --ae_checkpoint out/checkpoints/autoencoder_00050000.pt --fc_checkpoint out/checkpoints/fc_00050000.pt
   ```
