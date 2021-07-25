@@ -1,0 +1,173 @@
+trainer: CasiabTrainer
+K: 2
+dis_train_times: 3
+body_reference: &body_reference True    # if set True, will use spine as vertical axis
+is_view: True
+is_stream: True
+seperate: null
+feature_type: combined
+
+# model options
+n_joints: 15                  # number of body joints
+seq_len: 64                   # length of motion sequence
+
+# logger options
+snapshot_save_iter: 10000
+log_iter: 40
+val_iter: 1000
+val_batches: 128
+
+# optimization options
+max_iter: 50000              # maximum number of training iterations
+batch_size: 128                # batch size
+weight_decay: 0.0001          # weight decay
+beta1: 0.5                    # Adam parameter
+beta2: 0.999                  # Adam parameter
+init: kaiming                 # initialization [gaussian/kaiming/xavier/orthogonal]
+dis_lr: 0.0002
+ae_lr: 0.0002                   # initial learning rate
+fc_lr: 0.0002
+cent_lr: 0.005
+lr_policy: step               # learning rate scheduler
+step_size: 5000              # how often to decay learning rate
+gamma: 0.5                    # how much to decay learning rate
+
+# loss
+gan_ls_w: False                    # if false not use gan_ls loss
+trans_dis: 0
+trans_dis_ls: 1
+trans_gan_w: 0
+trans_gan_w_ls: 1
+recon_x_w: 10000                # weight of reconstruction loss
+recon_x_view_w: 10000
+inv_b_ls_w: 200                 # weight of view invariance loss against limb scale
+inv_m_ls_w: 200                # weight of motion invariance loss against limb scale
+inv_v_ls_w: 500
+id_weight: 1
+center_weight: 0.008
+triplet_weight: 100
+body_time_weight: 100
+body_time_ls_weight: 100
+
+# network options
+autoencoder:
+  cls: Autoencoder3f
+  body_reference: *body_reference
+  motion_encoder:
+    cls: ConvEncoder
+    channels: [30, 64, 128, 128]
+    padding: 1
+    kernel_size: 3
+    conv_stride: 1
+    conv_pool: null
+  body_encoder:
+    cls: ConvEncoder
+    channels: [28, 64, 128, 128]
+    padding: 1
+    kernel_size: 3
+    conv_stride: 1
+    conv_pool: null
+    global_pool: max_pool1d
+  view_encoder:
+    cls: ConvEncoder
+    channels: [28, 64, 32, 128]
+    padding: 1
+    kernel_size: 3
+    conv_stride: 1
+    conv_pool: null
+    global_pool: max_pool1d
+  decoder:
+    channels: [384, 256, 128, 45]
+    kernel_size: 7
+
+discriminator:
+  encoder_cls: ConvEncoder
+  gan_type: nsgan
+  channels: [30, 64, 96, 128]
+  padding: 3
+  kernel_size: 8
+  conv_stride: 2
+  conv_pool: null
+
+motion:
+  conv1_i: 1
+  conv1_o: 32
+  conv2_i: 32
+  conv2_o: 64
+  input_dim: 20800
+  fc_dim: 2048
+  output_dim: 256
+  class_num: 62
+  loss: SmoothCrossEntropy
+  smooth: 0.1
+
+body:
+  conv1_i: 1
+  conv1_o: 32
+  conv2_i: 32
+  conv2_o: 64
+  input_dim: 33024
+  fc_dim: 2048
+  output_dim: 256
+  class_num: 62
+  loss: SmoothCrossEntropy
+  smooth: 0.1
+
+pose:
+  conv1_i: 1
+  conv1_o: 32
+  conv2_i: 32
+  conv2_o: 64
+  input_dim: 33792
+  fc_dim: 2048
+  output_dim: 256
+  class_num: 62
+  loss: SmoothCrossEntropy
+  smooth: 0.1
+
+view:
+  conv1_i: 1
+  conv1_o: 32
+  conv2_i: 32
+  conv2_o: 64
+  input_dim: 1280
+  fc_dim: 512
+  output_dim: 256
+  class_num: 62
+  loss: SmoothCrossEntropy
+  smooth: 0.1
+
+fc:
+  input_dim: 304128
+  output_dim: 512
+  class_num: 74
+  loss: SmoothCrossEntropy
+  smooth: 0.1
+
+body_discriminator:
+  gan_type: nsgan
+  channels: [512, 128, 32]
+
+# data options
+data:
+  stream: 3
+  draw_index: 1
+  draw_iter: 10000
+  seq_len: 64
+
+  train_cls: CasiabDataset
+  eval_cls: CasiabDataset
+
+  train_dir: data/casiab2/train_LT/train.npy
+  train_label_dir: data/casiab2/train_LT/train_label.npy
+  train_angle_dir: data/casiab2/train_LT/train_angle.npy
+  train_situation_dir: data/casiab2/train_LT/train_situation.npy
+
+  gallery_dir: data/casiab2/val_gallery_LT/
+  gallery_label_dir: data/casiab2/val_gallery_LT/
+  gallery_angle_dir: data/casiab2/val_gallery_LT/val_gallery_angle.npy
+
+  probe_dir : data/casiab2/val_probe_LT/
+  probe_label_dir: data/casiab2/val_probe_LT/
+  probe_angle_dir: data/casiab2/val_probe_LT/val_probe_angle.npy
+  num_workers: 1
